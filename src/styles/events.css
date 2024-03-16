@@ -85,11 +85,39 @@
 
 }
 
+/* EventsPage.css */
+
+/* Filter container */
+.filter-container {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add spacing between filter container and events container */
+    justify-content: right;
+}
+
+/* Filter label */
+.filter-container label {
+    margin-right: 10px; /* Add spacing between label and select */
+}
+
+/* Filter select */
+.filter-container select {
+    padding: 5px; /* Add padding to select */
+    font-size: 14px; /* Adjust font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius */
+}
+
+.events-page {
+    display: flex;
+    max-width: 60%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
 @media screen and (max-width: 768px) {
     /* Adjust styles for smaller screens */
-    .events-container {
-        padding: 0 20px; /* Add padding to the container */
-    }
 
     .event-card {
         width: 100%;
@@ -105,5 +133,9 @@
 
     .right-arrow-icon {
         display: none;
+    }
+
+    .events-page {
+        max-width: 100%;
     }
 }

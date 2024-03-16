@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/events.css'
 const EventsPage = () => {
     // Primeri eventov
-    const events = [
+    const eventsData = [
         {
             id: 1,
             name: 'Titov bunker',
@@ -22,14 +22,14 @@ const EventsPage = () => {
             name: 'Titov bunker',
             image: '/images/zrce-hr.jpg',
             location: 'Šehidska br. 5, Konjic',
-            review: 4.2,
+            review: 2.2,
         },
         {
             id: 4,
             name: 'Titov bunker',
             image: '/images/zrce-hr.jpg',
             location: 'Šehidska br. 5, Konjic',
-            review: 4.7,
+            review: 1.2,
         },
         {
             id: 5,
@@ -39,6 +39,19 @@ const EventsPage = () => {
             review: 4.0,
         },
     ];
+
+    // State for the selected filter option
+    const [selectedFilter, setSelectedFilter] = useState('all');
+
+    // Filtered events based on the selected filter option
+    let filteredEvents = selectedFilter === 'highest-review'
+        ? [...eventsData].sort((a, b) => b.review - a.review) // Sort by review score in descending order
+        : eventsData;
+
+    // Event handler for changing the filter
+    const handleFilterChange = (event) => {
+        setSelectedFilter(event.target.value);
+    };
 
     const renderStars = (rating) => {
         const stars = [];
@@ -62,10 +75,17 @@ const EventsPage = () => {
     };
 
     return (
-        <div>
+        <div className="events-page">
             <h2>Events</h2>
+            <div className="filter-container">
+                <label htmlFor="filter">Filter:</label>
+                <select id="filter" value={selectedFilter} onChange={handleFilterChange}>
+                    <option value="all">All</option>
+                    <option value="highest-review">Highest Review</option>
+                </select>
+            </div>
             <div className="events-container">
-                {events.map(event => (
+                {filteredEvents.map(event => (
                     <div key={event.id} className="event-card">
                         <img src={event.image} alt={event.name} className="event-image" />
                         <div className="event-details">
