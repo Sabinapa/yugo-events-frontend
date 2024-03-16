@@ -27,7 +27,7 @@ function Zdruzeno() {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', overflow: 'auto' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div style={{ marginTop: '0px', display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', overflow: 'auto' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div style={{ maxWidth: '800px', width: '100%', marginTop: 'auto', marginBottom: '20px' }}>
                 <header className="text-center mb-4" style={{ position: 'sticky', top: '0', zIndex: '100', background: 'white' }}>
                     <p style={{ fontSize: '20px' }}>Average Rating: {averageRating} ({comments.length} ratings)</p>

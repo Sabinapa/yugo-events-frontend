@@ -8,20 +8,19 @@ import InfoPageMoreInfo from "./components/InfoPage2";
 
 function App() {
   return (
-      <BrowserRouter>
-        <div className="App">
-          <script src="https://cdn.jsdelivr.net/npm/openlayers@6.6.1/dist/ol.js"></script>
-          <header className="Yugo-events">
-            <Routes>
-              <Route path="/info" element={<InfoPage/>}></Route>
-                <Route path="/info-page" element={<InfoPageMoreInfo/>}></Route>
-                <Route path="/map" element={<MapView/>}></Route>
-                <Route path="/" element={<Zdruzeno />} />
-            </Routes>
+    <BrowserRouter>
+      <div className="App">
+        <script src="https://cdn.jsdelivr.net/npm/openlayers@6.6.1/dist/ol.js"></script>
+        <header className="Yugo-events">
+          <Routes>
+            <Route path="/info" element={<InfoPage />}></Route>
+            <Route path="/info-page" element={<InfoPageMoreInfo />}></Route>
+            <Route path="/" element={<MapView />}></Route>
+          </Routes>
 
-          </header>
-        </div>
-      </BrowserRouter>
+        </header>
+      </div>
+    </BrowserRouter>
   );
 }
 
