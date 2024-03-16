@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import InfoPage from "./components/InfoPage";
+import InfoPageMoreInfo from "./components/InfoPage2";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <div className="App">
+          <header className="Yugo-events">
+            <Routes>
+              <Route path="/info" element={<InfoPage/>}></Route>
+                <Route path="/info-page" element={<InfoPageMoreInfo/>}></Route>
+            </Routes>
+
+          </header>
+        </div>
+      </BrowserRouter>
   );
 }
 
