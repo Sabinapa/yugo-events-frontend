@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MapView from "./components/MapView";
 import React from 'react';
+import { Modal } from 'react-bootstrap';
 import InfoPage from "./components/InfoPage";
 import InfoPageMoreInfo from "./components/InfoPage2";
 import EventsPage from "./components/events";
