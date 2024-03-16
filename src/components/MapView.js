@@ -12,10 +12,13 @@ import Point from 'ol/geom/Point';
 import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
 import { Icon, Style } from 'ol/style';
+import InfoPage from './InfoPage';
+import InfoPage2 from './InfoPage2';
 
 const MapView = ({ }) => {
     const navigate = useNavigate();
-    const [markerClicked, setMarkerClicked] = useState(false);
+    const [marker1Clicked, setMarkerClicked] = useState(false);
+    const [marker_banja_Clicked, setMarkerBanjaClicked] = useState(false);
 
     useEffect(() => {
         const map = new Map({
@@ -59,11 +62,23 @@ const MapView = ({ }) => {
 
         marker.setStyle(markerStyle);
 
-        
+        // adding markers (find a better solution when we start implementing multiple points of interest, ex. make a list in a json file and just read from that)
+        const marker_banjaluka = new Feature({
+            geometry: new Point(fromLonLat([17.1751, 44.7574]))
+        });
+
+        const markerStyle_banjaluka = new Style({
+            image: new Icon({
+                src: 'https://openlayers.org/en/latest/examples/data/icon.png',
+                anchor: [0.5, 1] // fixes a little bug where the map marker would be centered reletive to itself (the middle of the marker would be 0, 0 now its at the bottom of the marker)
+            })
+        });
+
+        marker_banjaluka.setStyle(markerStyle_banjaluka);        
 
         const vectorLayer = new VectorLayer({
             source: new VectorSource({
-                features: [marker]
+                features: [marker, marker_banjaluka]
             })
         });
 
@@ -74,6 +89,12 @@ const MapView = ({ }) => {
                 if (feature === marker) {
                     console.log('Marker clicked');
                     setMarkerClicked(true);
+                    setMarkerBanjaClicked(false);
+                }
+                if (feature === marker_banjaluka) {
+                    console.log('Marker banja clicked');
+                    setMarkerBanjaClicked(true);
+                    setMarkerClicked(false);
                 }
             });
         });
@@ -92,7 +113,17 @@ const MapView = ({ }) => {
             </div>
         </div>
         <div style={{ flex: 1, margin: '50px', padding: '20px' }}>
-            {markerClicked && <p>Info about the specific location (to be implemented)</p>}
+            {marker1Clicked && 
+            <div style={{padding: '50px'}}>
+                <p>Maribor - Stara trta</p>
+                <p>Description to be added at a later stage</p>
+            </div>
+            }
+            {marker_banja_Clicked && 
+            <div style={{padding: '50px'}}>
+                <InfoPage></InfoPage>
+            </div>
+            }
         </div>
     </div>
     );

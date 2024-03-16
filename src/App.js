@@ -18,13 +18,13 @@ function App() {
                 <Route path="/info" element={<InfoPage/>}></Route>
                 <Route path="/info-page" element={<InfoPageMoreInfo/>}></Route>
                 <Route path="/map" element={<MapView/>}></Route>
-                <Route path="/" element={<Zdruzeno />} />
+                <Route path="/" element={<MapView />}></Route>
                 <Route path="/events" element={<EventsPage/>}></Route>
+                <Route path="/info-page" element={<InfoPageMoreInfo />}></Route>
             </Routes>
-
-          </header>
-        </div>
-      </BrowserRouter>
+        </header>
+      </div>
+    </BrowserRouter>
   );
 }
 
