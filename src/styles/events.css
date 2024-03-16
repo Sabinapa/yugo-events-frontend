@@ -1,0 +1,141 @@
+/* EventsPage.css */
+
+/* Events container */
+.events-container {
+    display: flex;
+    flex-direction: column; /* Set flex direction to column */
+    align-items: center; /* Center items horizontally */
+}
+
+.events-container p, h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Event card */
+.event-card {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: auto; /* Ensure each card takes full width */
+}
+
+/* Event image */
+.event-image {
+    width: 100%; /* Ensure the image takes full width of the card */
+    max-height: 200px; /* Limit the maximum height of the image */
+    object-fit: cover;border-radius: 5px;
+}
+
+/* Event details */
+.event-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align content to the start horizontally (left) */
+    flex: 1; /* Allow the event details to expand to fill remaining space */
+    min-width: 300px;
+}
+
+/* Review */
+.review {
+    font-style: italic;
+}
+
+/* Star icon */
+.star-icon {
+    color: gold; /* Set the color of the stars */
+    font-size: 1.5rem; /* Adjust the size of the stars */
+    margin-right: 2px; /* Add some space between stars */
+}
+
+/* Style the empty star */
+.star-icon.empty {
+    color: #ccc; /* Set a lighter color for empty stars */
+}
+
+/* Style the partially filled star */
+.star-icon.partial {
+    position: relative;
+    display: inline-block;
+    width: 1.5rem; /* Adjust the size of the partial star */
+}
+
+/* Style the partially filled star content */
+.star-icon.partial:before {
+    content: '\2605'; /* Unicode for a solid star */
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    color: gold; /* Set the color of the partially filled star */
+}
+
+.location-icon {
+    display: inline-block;
+    width: 24px; /* Set the width of the icon */
+    height: 24px; /* Set the height of the icon */
+    background-size: cover; /* Ensure the background image covers the span */
+    margin-right: 5px; /* Add some space between the icon and the location text */
+}
+
+.right-arrow-icon {
+
+}
+
+/* EventsPage.css */
+
+/* Filter container */
+.filter-container {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Add spacing between filter container and events container */
+    justify-content: right;
+}
+
+/* Filter label */
+.filter-container label {
+    margin-right: 10px; /* Add spacing between label and select */
+}
+
+/* Filter select */
+.filter-container select {
+    padding: 5px; /* Add padding to select */
+    font-size: 14px; /* Adjust font size */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius */
+}
+
+.events-page {
+    display: flex;
+    max-width: 60%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+
+    .event-card {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-details {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right-arrow-icon {
+        display: none;
+    }
+
+    .events-page {
+        max-width: 100%;
+    }
+}
