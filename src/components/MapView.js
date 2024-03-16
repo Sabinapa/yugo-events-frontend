@@ -115,12 +115,13 @@ const MapView = ({ }) => {
         <div style={{ flex: 1, margin: '50px', padding: '20px' }}>
             {marker1Clicked && 
             <div style={{padding: '50px'}}>
-                <InfoPage></InfoPage>
+                <p>Maribor - Stara trta</p>
+                <p>Description to be added at a later stage</p>
             </div>
             }
             {marker_banja_Clicked && 
             <div style={{padding: '50px'}}>
-                <InfoPage2></InfoPage2>
+                <InfoPage></InfoPage>
             </div>
             }
         </div>
