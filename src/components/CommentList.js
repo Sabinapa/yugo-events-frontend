@@ -29,7 +29,7 @@ const CommentList = ({ comments }) => {
                         <img src={profileImage} alt="Profile" style={{ borderRadius: '50%', width: '50px', height: '50px', marginRight: '10px', marginTop: '-20px' }} />
                         <div style={{ marginLeft: '5px', marginTop: '20px' }}>
                             <h3 style={{ textAlign: 'left' }}>{comment.title}</h3> {/* Preverite, ali pravilno uporabljate naslov */}
-                            {splitDetails(comment.details, 40).map((chunk, i) => (
+                            {splitDetails(comment.details, 80).map((chunk, i) => (
                                 <p key={i} style={{ textAlign: 'left' }}>
                                     {chunk}
                                 </p>
