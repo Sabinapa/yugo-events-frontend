@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import InfoPage from "./components/InfoPage";
 import InfoPageMoreInfo from "./components/InfoPage2";
+import EventsPage from "./components/events";
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
         <div className="App">
           <header className="Yugo-events">
             <Routes>
-              <Route path="/info" element={<InfoPage/>}></Route>
+                <Route path="/info" element={<InfoPage/>}></Route>
                 <Route path="/info-page" element={<InfoPageMoreInfo/>}></Route>
+                <Route path="/events" element={<EventsPage/>}></Route>
             </Routes>
 
           </header>
