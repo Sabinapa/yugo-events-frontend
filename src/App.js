@@ -1,8 +1,7 @@
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Zdruzeno from './components/Zdruzeno';
 import InfoPage from "./components/InfoPage";
 import InfoPageMoreInfo from "./components/InfoPage2";
