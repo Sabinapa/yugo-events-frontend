@@ -5,8 +5,10 @@ import React from 'react';
 import InfoPage from "./components/InfoPage";
 import InfoPageMoreInfo from "./components/InfoPage2";
 import EventsPage from "./components/events";
+import ProfilePage from './pages/ProfilePage';
 
-function App() {
+
+const App = () => {
   return (
       <BrowserRouter>
         <div className="App">
@@ -18,11 +20,12 @@ function App() {
                 <Route path="/" element={<MapView />}></Route>
                 <Route path="/map" element={<MapView/>}></Route>
                 <Route path="/events" element={<EventsPage/>}></Route>
+                <Route path="/profile" element={<ProfilePage/>}></Route>
             </Routes>
         </header>
       </div>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
