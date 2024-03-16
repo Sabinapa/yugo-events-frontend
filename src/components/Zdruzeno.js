@@ -27,14 +27,10 @@ function Zdruzeno() {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', overflow: 'auto' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh', overflow: 'auto' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div style={{ maxWidth: '800px', width: '100%', marginTop: 'auto', marginBottom: '20px' }}>
-                <header className="text-center mb-4">
-                    <img src={profileImage} alt="Profile" style={{ borderRadius: '50%', width: '100px', height: '100px' }} />
-                    <h1>Naslov</h1>
-                    <hr style={{ marginLeft: '-25px' }} />
-                    <p>Location</p>
-                    <p>Average Rating: {averageRating} ({comments.length} ratings)</p>
+                <header className="text-center mb-4" style={{ position: 'sticky', top: '0', zIndex: '100', background: 'white' }}>
+                    <p style={{ fontSize: '20px' }}>Average Rating: {averageRating} ({comments.length} ratings)</p>
                     <Rating value={parseFloat(averageRating)} disableClick={disableRatingClick} />
                 </header>
                 <CommentList comments={comments} />
